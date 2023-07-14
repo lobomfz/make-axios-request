@@ -42,7 +42,6 @@ const res = await makeAxiosRequest({
 		// All makeAxiosRequest calls with this key will enter a queue with a 100ms delay (default)
 		key: "example_api_queue_key",
 	},
-
 	dataSchema: z.object({
 		grant_type: z.literal("refresh_token"),
 		client_id: z.string(),
@@ -50,7 +49,6 @@ const res = await makeAxiosRequest({
 		refresh_token: z.string(),
 		user_id: z.string().optional(),
 	}),
-
 	// errors if not valid z.input of dataSchema. with autocomplete
 	data: {
 		grant_type: "refresh_token",
@@ -60,7 +58,6 @@ const res = await makeAxiosRequest({
 		// user_id will error if removeNulls: true is not supplied, as the input schema is .optional()
 		user_id: null,
 	},
-
     paramsSchema: z.object({
         timestamp: z.number(),
         signature: z.string().optional(),
