@@ -49,7 +49,7 @@ const res = await makeAxiosRequest({
 		refresh_token: z.string(),
 		user_id: z.string().optional(),
 	}),
-	// errors if not valid z.input of dataSchema. with autocomplete
+	// errors if not valid z.input of dataSchema
 	data: {
 		grant_type: "refresh_token",
 		client_id: "123",
@@ -58,21 +58,20 @@ const res = await makeAxiosRequest({
 		// user_id will error if removeNulls: true is not supplied, as the input schema is .optional()
 		user_id: null,
 	},
-    paramsSchema: z.object({
-        timestamp: z.number(),
-        signature: z.string().optional(),
-    }),
-    params: {
-        // Type 'string' is not assignable to type 'number'.ts(2322)
-        timestamp: "error",
-        signature: null,
-    },
+	paramsSchema: z.object({
+		timestamp: z.number(),
+		signature: z.string().optional(),
+	}),
+	params: {
+		// Type 'string' is not assignable to type 'number'.ts(2322)
+		timestamp: "error",
+		signature: null,
+	},
 	removeNulls: true,
 	outputSchema,
 	postProcessor: (data: z.output<typeof outputSchema>) => data.response,
 	retry: true,
 });
-
 ```
 
 ## API
