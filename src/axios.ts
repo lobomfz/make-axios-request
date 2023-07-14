@@ -18,8 +18,8 @@ export async function makeAxiosRequest<
 		| ((
 				data: OutputSchema extends ZodType ? z.output<OutputSchema> : never
 		  ) => any)
-		| undefined,
-	RemoveNulls extends boolean | undefined,
+		| undefined = undefined,
+	RemoveNulls extends boolean | undefined = undefined,
 >(
 	input: MakeAxiosRequestInput<
 		BodySchema,
