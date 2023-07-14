@@ -1,6 +1,6 @@
 {
 	"name": "make-axios-request",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "Create 100% type-safe Axios requests with Zod, with other features like retrying and queueing",
 	"exports": "./dist/index.js",
 	"types": "dist/index.d.ts",
