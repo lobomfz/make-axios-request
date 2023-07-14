@@ -70,7 +70,6 @@ const res = await makeAxiosRequest({
         timestamp: "error",
         signature: null,
     },
-
 	removeNulls: true,
 	outputSchema,
 	postProcessor: (data: z.output<typeof outputSchema>) => data.response,
@@ -94,7 +93,7 @@ const res = await makeAxiosRequest({
 - `extraBody`: Additional body parameters to send with the request.
 - `headers`: The headers for the request.
 - `extraParams`: Additional parameters to send with the request.
-- `preProcessor`: A function that receives the raw axios return body and pre-processes it. useful if you only need to extract part of the response and do not want to create a schema for the the whole response. Not type
+- `preProcessor`: A function that receives the raw axios return body and pre-processes it. useful if you only need to extract part of the response and do not want to create a schema for the the whole response. Not type-safe.
 - `postProcessor`: A function that receives the response of the outputSchema (z.output) and returns adjusts the return of the makeAxiosRequest function, type-safe.
 - `errorHandler`: Handles AxiosError.
 - `axiosInstance`: Custom Axios instance to use for the request.
