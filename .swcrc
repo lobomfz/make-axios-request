@@ -1,0 +1,14 @@
+{
+	"minify": true,
+	"jsc": {
+		"parser": {
+			"syntax": "typescript"
+		},
+		"target": "es2016",
+		"minify": {
+			"compress": {
+				"arrows": false
+			}
+		}
+	}
+}

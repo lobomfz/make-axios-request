@@ -1,0 +1,29 @@
+{
+	"name": "make-axios-request",
+	"version": "1.0.5",
+	"description": "Create 100% type-safe Axios requests with Zod, with other features like retrying and queueing",
+	"exports": "./dist/index.js",
+	"types": "dist/index.d.ts",
+	"author": "lobomfz",
+	"license": "MIT",
+	"type": "module",
+	"scripts": {
+		"build": "tsc && swc src -d dist"
+	},
+	"devDependencies": {
+		"@swc/cli": "^0.1.62",
+		"@swc/core": "^1.3.69",
+		"@swc/register": "^0.1.10",
+		"@types/node": "^20.4.2",
+		"prettier": "^3.0.0",
+		"typescript": "^5.1.6"
+	},
+	"dependencies": {
+		"axios": "^1.4.0",
+		"axios-retry": "^3.5.1",
+		"zod": "^3.21.4"
+	},
+	"files": [
+		"/dist"
+	]
+}
