@@ -103,13 +103,7 @@ export async function makeAxiosRequest<
 	if (input.outputSchema) {
 		const output = input.outputSchema.parse(processedRes);
 
-		if (output.success) {
-			return input.postProcessor
-				? input.postProcessor(output.data)
-				: output.data;
-		}
-
-		throw output.error;
+		return input.postProcessor ? input.postProcessor(output.data) : output.data;
 	}
 
 	return processedRes as any;
